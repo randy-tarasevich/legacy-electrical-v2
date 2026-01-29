@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Legacy Electrical - Professional electrical contractors serving East Berlin, Connecticut and surrounding areas.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="electrical contractor, electrician, East Berlin, Hartford, New Britain, Connecticut, residential electrical, commercial electrical, electrical repairs, lighting installation, electrical panel upgrades, ev charging installation" />
+    <meta name="author" content="Legacy Electrical" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://legacyelectrical.com" />
+    <meta property="og:image" content="https://legacyelectrical.com/images/logo.jpg" />
+
+    <meta name="geo.region" content="US-CT" />
+    <meta name="geo.placename" content="East Berlin" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <title>{title}</title>
+  </head>
+  <body class="font-sans text-gray-900">
+    <slot />
+  </body>
+</html>

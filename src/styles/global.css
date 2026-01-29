@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0d6efd;
+  --color-primary-dark: #0b5ed7;
+  --color-amber: #ffc107;
+  --color-amber-dark: #e0a800;
+  --font-family-sans: 'Poppins', 'Inter', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Card hover effects */
+.hover-zoom {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-zoom:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Emergency banner pulse */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 193, 7, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+}
+.pulse-btn {
+  animation: pulse 2s infinite;
+}

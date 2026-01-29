@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Legacy Electrical | Trusted Electrical Contractors in East Berlin, CT">
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative h-[600px] bg-gray-900">
+    <div class="absolute inset-0 bg-cover bg-center brightness-[0.7]" style="background-image: url('/images/AdobeStock_286722475_Preview.jpeg');"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="text-center text-white px-4 max-w-3xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Legacy Electrical</h1>
+        <p class="text-lg md:text-xl mb-6">Expert Electrical Services Throughout Connecticut</p>
+        <div class="flex justify-center gap-3 flex-wrap">
+          <a href="/contact" class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded text-lg font-semibold shadow-lg transition-colors">Get a Free Quote</a>
+          <a href="tel:860-604-9325" class="border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 rounded text-lg font-semibold transition-colors">860-604-9325</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Welcome to Legacy Electrical</h2>
+      <p class="text-lg text-gray-700 mb-4">
+        Based in East Berlin and serving all of Connecticut, Legacy Electrical brings professional expertise and reliable service to every electrical project. Whether you need residential repairs or complete commercial installations, our licensed team ensures your electrical systems are safe, efficient, and up to code.
+      </p>
+      <p class="text-2xl font-bold italic">First Responder Owned & Operated!</p>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-10">Our Services</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-lg shadow p-6 hover-zoom">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-primary text-3xl">&#x1F3E0;</span>
+            <h3 class="text-xl font-bold">Residential Services</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Keep your home safe and powered with our comprehensive residential electrical services. From electrical panel upgrades to lighting installation, we handle all your home's electrical needs with precision and care.</p>
+          <a href="/services#residential" class="text-primary font-semibold hover:underline">Learn More &rarr;</a>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6 hover-zoom">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-primary text-3xl">&#x1F3E2;</span>
+            <h3 class="text-xl font-bold">Commercial Solutions</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Power your business with confidence. Our commercial electrical services support everything from small retail spaces to large industrial facilities, ensuring your operations run smoothly and efficiently.</p>
+          <a href="/services#commercial" class="text-primary font-semibold hover:underline">Learn More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-10">Why Choose Legacy Electrical?</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { icon: '&#x1F6E1;', title: 'Licensed & Insured', text: 'Fully licensed and insured electrical contractor with state certification ELC.0207936-E1' },
+          { icon: '&#x1F465;', title: 'Expert Team', text: 'Skilled electricians trained in the latest electrical systems and safety protocols' },
+          { icon: '&#x1F4CD;', title: 'Service Area', text: 'Proudly serving all of Connecticut from our East Berlin headquarters' },
+          { icon: '&#x2B50;', title: 'Commitment to Quality', text: 'Every project completed to the highest standards, with attention to detail and customer satisfaction' },
+        ].map(item => (
+          <div class="bg-white rounded-lg shadow p-6 text-center hover-zoom">
+            <div class="text-4xl mb-3" set:html={item.icon} />
+            <h3 class="font-bold mb-2">{item.title}</h3>
+            <p class="text-gray-600 text-sm">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Services -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="bg-amber text-black rounded-lg shadow-lg p-8 md:flex items-center justify-between">
+        <div class="flex items-center gap-4 mb-4 md:mb-0">
+          <span class="text-4xl">&#x26A1;</span>
+          <div>
+            <h2 class="text-2xl font-bold mb-2">24/7 Emergency Services</h2>
+            <p class="text-lg">Electrical emergencies don't wait for business hours. Count on Legacy Electrical for prompt, professional response when you need us most.</p>
+          </div>
+        </div>
+        <a href="tel:860-604-9325" class="inline-block bg-gray-900 text-white px-6 py-3 rounded text-lg font-semibold shadow pulse-btn hover:bg-gray-800 transition-colors whitespace-nowrap">Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas We Serve -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Areas We Serve</h2>
+      <p class="text-lg text-gray-700 mb-6">From Hartford County to New Haven, Litchfield to Windham, Legacy Electrical is your trusted electrical contractor across Connecticut. Our central location in East Berlin allows us to efficiently serve both residential and commercial clients throughout the state.</p>
+      <div class="flex flex-wrap justify-center gap-2">
+        {['Hartford', 'New Haven', 'Fairfield', 'Litchfield', 'Windham', 'New London', 'Middlesex', 'Tolland'].map(area => (
+          <span class="bg-gray-600 text-white px-3 py-1 rounded text-sm">{area}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="bg-blue-50 rounded-lg py-12 px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
+        <p class="text-lg text-gray-700 mb-6">Contact Legacy Electrical today for a consultation. We'll help you find the right electrical solution for your needs.</p>
+        <div class="flex justify-center gap-3 flex-wrap">
+          <a href="/contact" class="bg-amber hover:bg-amber-dark text-black px-6 py-3 rounded text-lg font-semibold shadow transition-colors">Contact Us</a>
+          <a href="tel:860-604-9325" class="bg-amber hover:bg-amber-dark text-black px-6 py-3 rounded text-lg font-semibold transition-colors">860-604-9325</a>
+        </div>
+        <p class="mt-4 text-sm text-gray-500">Free estimates for qualified projects</p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

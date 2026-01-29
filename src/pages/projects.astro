@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  { title: 'Modern Home Electrical Upgrade', description: 'Complete electrical system upgrade for a 3,200 sq ft home in West Hartford. Included panel upgrade, smart home integration, and dedicated circuits for home office equipment.', image: '/images/home-electrical-panel.png', badge: 'Residential', badgeColor: 'bg-primary' },
+  { title: 'Downtown Commercial Renovation', description: 'Electrical renovation for a 4-story office building downtown Hartford. Updated lighting systems, energy-efficient wiring, and improved network infrastructure for multiple business tenants.', image: '/images/commercial-electrical-project.png', badge: 'Commercial', badgeColor: 'bg-green-600' },
+  { title: 'Restaurant Lighting Installation', description: 'Custom lighting design and installation for a new farm-to-table restaurant. Included pendant fixtures, recessed lighting, and programmable mood lighting systems with energy-efficient LED fixtures.', image: '/images/restaurant-lighting-installation.png', badge: 'Commercial', badgeColor: 'bg-green-600' },
+  { title: 'Solar Panel Integration', description: 'Full solar panel system integration for a custom-built home. Included electrical panel upgrades, battery backup installation, and smart monitoring systems for optimal energy usage.', image: '/images/residential-solar-panels.png', badge: 'Residential', badgeColor: 'bg-primary' },
+  { title: 'Retail Store Electrical System', description: 'Complete electrical system design and installation for a new retail store in the Waterford Commons Shopping Center. Included custom lighting, security systems, and energy-efficient climate controls.', image: '/images/retail-store-electrical-system.png', badge: 'Commercial', badgeColor: 'bg-green-600' },
+  { title: 'Home Theater Wiring', description: 'Custom home theater electrical wiring and installation. Included dedicated circuits, concealed speaker wiring, structured cabling for audio-visual equipment, and automated lighting systems.', image: '/images/home-theater-system.png', badge: 'Residential', badgeColor: 'bg-primary' },
+];
+
+const steps = [
+  { icon: '&#x1F4AC;', title: 'Consultation', text: 'We meet to understand your needs, assess your space, and discuss possible solutions.' },
+  { icon: '&#x1F4CB;', title: 'Planning', text: 'We create a detailed plan including timeline, materials, and cost estimates for your approval.' },
+  { icon: '&#x1F527;', title: 'Implementation', text: 'Our skilled electricians complete the work efficiently with minimal disruption to your home or business.' },
+  { icon: '&#x2705;', title: 'Quality Assurance', text: 'We perform thorough testing and inspections to ensure everything meets our high standards and your satisfaction.' },
+];
+---
+
+<BaseLayout title="Our Projects - Legacy Electrical" description="View featured electrical projects from Legacy Electrical across Connecticut.">
+  <Navbar />
+
+  <!-- Page Header -->
+  <div class="bg-amber text-black py-12 mb-10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold">Our Projects</h1>
+      <p class="text-lg mt-2">Delivering quality electrical solutions for residential and commercial properties</p>
+    </div>
+  </div>
+
+  <!-- Featured Projects -->
+  <section class="max-w-7xl mx-auto px-4 mb-16">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold">Featured Projects</h2>
+      <p class="text-gray-500">Take a look at some of our recent work</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map(project => (
+        <ProjectCard {...project} />
+      ))}
+    </div>
+  </section>
+
+  <!-- Project Process -->
+  <section class="bg-gray-50 py-12 mb-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold">Our Project Process</h2>
+        <p class="text-gray-500">How we bring your electrical projects to life</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {steps.map(step => (
+          <div class="text-center">
+            <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-3xl" set:html={step.icon} />
+            <h4 class="font-bold text-lg mb-2">{step.title}</h4>
+            <p class="text-gray-600 text-sm">{step.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gray-50 py-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
+      <p class="text-lg text-gray-700 mb-6">Contact us today for a consultation and free quote on your electrical needs</p>
+      <a href="/contact" class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded text-lg font-semibold transition-colors">Contact Us</a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

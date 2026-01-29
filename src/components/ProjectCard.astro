@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  badge: string;
+  badgeColor?: string;
+}
+
+const { title, description, image, badge, badgeColor = 'bg-primary' } = Astro.props;
+---
+
+<div class="bg-white rounded-lg shadow overflow-hidden hover-zoom h-full flex flex-col">
+  <img src={image} alt={title} class="w-full h-56 object-cover" />
+  <div class="p-4 flex-1">
+    <h5 class="font-bold text-lg mb-1">{title}</h5>
+    <span class={`inline-block text-white text-xs px-2 py-1 rounded mb-2 ${badgeColor}`}>{badge}</span>
+    <p class="text-gray-600 text-sm">{description}</p>
+  </div>
+</div>

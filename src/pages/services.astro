@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+---
+
+<BaseLayout title="Electrical Services - Legacy Electrical" description="Comprehensive electrical services for residential and commercial properties across Connecticut. Licensed electrician serving New Britain and surrounding areas.">
+  <Navbar />
+
+  <!-- Page Header -->
+  <div class="bg-amber text-black py-12 mb-10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold">Our Electrical Services</h1>
+      <p class="text-lg mt-2">Professional electrical solutions for every need, delivered with expertise and attention to detail</p>
+    </div>
+  </div>
+
+  <!-- Residential Services -->
+  <section id="residential" class="max-w-7xl mx-auto px-4 py-12">
+    <div class="grid md:grid-cols-2 gap-10 items-center mb-10">
+      <div>
+        <h2 class="text-3xl font-bold mb-4">Residential Electrical Services</h2>
+        <p class="text-lg text-gray-700 mb-4">Our comprehensive electrical services keep your home safe, functional, and up to code. From new installations to repairs, our licensed electricians deliver quality work you can trust.</p>
+        <p class="text-lg text-gray-700">Every home has unique electrical needs. That's why our team takes the time to understand your specific requirements and provides customized solutions that fit your lifestyle and budget.</p>
+      </div>
+      <div>
+        <img src="/images/residential_lighting.png" alt="Residential lighting installation" class="rounded-lg shadow max-h-[600px] w-full object-cover" />
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <ServiceCard title="Panel Upgrades" description="Modernize your electrical system with a panel upgrade that supports your home's power demands and provides enhanced safety features." icon="&#x26A1;" />
+      <ServiceCard title="Outlet & Switch Installation" description="Add convenience with new outlets and switches, including GFCI protection in wet areas and USB charging outlets for modern devices." icon="&#x1F50C;" />
+      <ServiceCard title="Lighting Solutions" description="Enhance your home with energy-efficient lighting installations, including recessed lighting, ceiling fans, and outdoor security lighting." icon="&#x1F4A1;" />
+      <ServiceCard title="Home Safety Inspections" description="Ensure your electrical system is safe with comprehensive inspections that identify potential hazards before they become dangerous." icon="&#x1F6E1;" />
+      <ServiceCard title="Whole House Rewiring" description="For older homes, complete rewiring provides safety and reliability while supporting modern electrical demands and smart home technology." icon="&#x1F3E0;" />
+      <ServiceCard title="EV Charger Installation" description="Prepare your home for electric vehicles with Level 2 charging stations that provide faster, more efficient charging capabilities." icon="&#x1F50B;" />
+    </div>
+  </section>
+
+  <!-- Commercial Services -->
+  <section id="commercial" class="bg-gray-50 py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="md:order-2">
+          <h2 class="text-3xl font-bold mb-4">Commercial Electrical Services</h2>
+          <p class="text-lg text-gray-700 mb-4">Power your business with reliable electrical systems that support operations and growth. Our commercial services are designed to minimize downtime and maximize efficiency.</p>
+          <p class="text-lg text-gray-700">We understand that electrical issues can disrupt your business. That's why we prioritize responsive service, efficient solutions, and clear communication throughout every commercial project.</p>
+        </div>
+        <div class="md:order-1">
+          <img src="/images/commercial_electrical.png" alt="Commercial electrical installation" class="rounded-lg shadow max-h-[600px] w-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
