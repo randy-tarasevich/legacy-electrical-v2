@@ -1,0 +1,348 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    category: 'Residential',
+    icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>`,
+    description: 'Complete electrical solutions for your home, from basic repairs to whole-house upgrades.',
+    items: [
+      {
+        name: 'Electrical Repairs',
+        desc: 'Troubleshooting and fixing outlets, switches, circuits, and electrical issues.',
+        image: '/images/services/electrical-repairs.jpg',
+      },
+      {
+        name: 'Lighting Installation',
+        desc: 'Recessed lighting, ceiling fans, chandeliers, and outdoor lighting systems.',
+        image: '/images/services/lighting-installation.jpg',
+      },
+      {
+        name: 'Panel Upgrades',
+        desc: 'Upgrade your electrical panel to handle modern power demands safely.',
+        image: '/images/services/panel-upgrades.jpg',
+      },
+      {
+        name: 'Whole-House Rewiring',
+        desc: 'Complete rewiring for older homes to meet current safety codes.',
+        image: '/images/services/whole-house-rewiring.jpg',
+      },
+      {
+        name: 'Outlet & Switch Installation',
+        desc: 'Additional outlets, USB outlets, smart switches, and GFCI protection.',
+        image: '/images/services/outlet-switch-installation.jpg',
+      },
+      {
+        name: 'Ceiling Fan Installation',
+        desc: 'Professional installation and wiring for ceiling fans in any room.',
+        image: '/images/services/ceiling-fan-installation.jpg',
+      },
+      {
+        name: 'Lighting Solutions',
+        desc: 'Indoor and outdoor lighting design, upgrades, and energy-efficient solutions for your home.',
+        image: '/images/services/lighting-solutions.jpg',
+      },
+      {
+        name: 'Home Safety Inspections',
+        desc: 'Electrical safety inspections to identify hazards and ensure your home meets current codes.',
+        image: '/images/services/home-safety-inspections.jpg',
+      },
+    ],
+  },
+  {
+    category: 'Commercial',
+    icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`,
+    description: 'Professional electrical services for businesses, retail spaces, and industrial facilities.',
+    items: [
+      {
+        name: 'Commercial Wiring',
+        desc: 'New construction and renovation electrical systems for businesses.',
+        image: '/images/services/commercial-wiring.jpg',
+      },
+      {
+        name: 'Lighting Systems',
+        desc: 'Energy-efficient LED upgrades, parking lot lighting, and office lighting design.',
+        image: '/images/services/lighting-systems.jpg',
+      },
+      {
+        name: 'Code Compliance',
+        desc: 'Inspections and upgrades to meet current electrical codes and regulations.',
+        image: '/images/services/code-compliance.jpg',
+      },
+      {
+        name: 'Data & Communications',
+        desc: 'Low-voltage wiring for data, phone, and security systems.',
+        image: '/images/services/data-communications.jpg',
+      },
+      {
+        name: 'Emergency Lighting',
+        desc: 'Exit signs, emergency lights, and backup power solutions.',
+        image: '/images/services/emergency-lighting.jpg',
+      },
+      {
+        name: 'Maintenance Programs',
+        desc: 'Scheduled maintenance to prevent costly downtime and repairs.',
+        image: '/images/services/maintenance-programs.jpg',
+      },
+    ],
+  },
+  {
+    category: 'Specialty Services',
+    icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
+    description: 'Specialized electrical solutions for modern homes and businesses.',
+    items: [
+      {
+        name: 'EV Charger Installation',
+        desc: 'Level 2 electric vehicle charging stations for home and business.',
+        image: '/images/services/ev-charger-installation.jpg',
+      },
+      {
+        name: 'Generator Installation',
+        desc: 'Standby generators and transfer switches for backup power.',
+        image: '/images/services/generator-installation.jpg',
+      },
+      {
+        name: 'Smart Home Wiring',
+        desc: 'Infrastructure for smart thermostats, lighting, and home automation.',
+        image: '/images/services/smart-home-wiring.jpg',
+      },
+      {
+        name: 'Surge Protection',
+        desc: 'Whole-house surge protection to safeguard electronics and appliances.',
+        image: '/images/services/surge-protection.jpg',
+      },
+      {
+        name: 'Solar Panel Connections',
+        desc: 'Electrical connections and panel upgrades for solar installations.',
+        image: '/images/services/solar-panel-connections.jpg',
+      },
+      {
+        name: 'Hot Tub & Pool Wiring',
+        desc: 'Safe, code-compliant electrical for hot tubs, pools, and spas.',
+        image: '/images/services/hot-tub-pool-wiring.jpg',
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Services" description="Explore our comprehensive electrical services including residential, commercial, EV charger installation, generator installation, and more.">
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden circuit-bg">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-1/4 -right-32 w-96 h-96 bg-electric/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 -left-32 w-64 h-64 bg-volt/5 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-steel px-4 py-2 rounded-full mb-8 animate-fade-up">
+          <span class="w-2 h-2 bg-electric rounded-full"></span>
+          <span class="text-silver text-sm font-medium">Our Services</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-6xl font-heading font-bold leading-tight mb-6 animate-fade-up">
+          Electrical Services <span class="text-electric glow-text">Done Right</span>
+        </h1>
+        
+        <p class="text-xl text-silver leading-relaxed animate-fade-up-delay">
+          From simple repairs to complex installations, we deliver quality electrical work 
+          for homes and businesses throughout Connecticut.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  {services.map((category, categoryIndex) => (
+    <section class:list={["section-padding", categoryIndex % 2 === 0 ? "bg-steel" : "circuit-bg"]}>
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end gap-6 mb-12">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-xl bg-electric/10 flex items-center justify-center text-electric" set:html={category.icon}></div>
+            <div>
+              <h2 class="text-3xl md:text-4xl font-heading font-bold">
+                {category.category} <span class="text-electric">Services</span>
+              </h2>
+            </div>
+          </div>
+          <p class="text-silver md:ml-auto md:max-w-md md:text-right">
+            {category.description}
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {category.items.map((service) => (
+            <div class="group rounded-xl bg-carbon border border-carbon hover:border-electric/30 transition-all duration-300 overflow-hidden">
+              <div class="aspect-[16/10] bg-steel overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.name}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  onerror="this.onerror=null;this.src='https://placehold.co/400x250/2d2d2d/9ca3af?text=Service';"
+                />
+              </div>
+              <div class="p-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-2 h-2 bg-electric mt-2 flex-shrink-0 group-hover:bg-volt transition-colors"></div>
+                  <div>
+                    <h3 class="font-heading text-lg font-bold mb-2 group-hover:text-electric transition-colors">
+                      {service.name}
+                    </h3>
+                    <p class="text-silver text-sm leading-relaxed">{service.desc}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Process Section -->
+  <section class="section-padding bg-steel">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">
+          Our <span class="text-electric">Process</span>
+        </h2>
+        <p class="text-silver text-lg max-w-2xl mx-auto">
+          From first call to final inspection, we make the electrical service experience simple and stress-free.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-xl bg-electric text-carbon font-heading text-2xl font-bold flex items-center justify-center mx-auto mb-6">
+            1
+          </div>
+          <h3 class="font-heading text-xl font-bold mb-3">Contact Us</h3>
+          <p class="text-silver text-sm">
+            Call or fill out our form. We'll discuss your project and schedule a convenient time.
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-xl bg-electric text-carbon font-heading text-2xl font-bold flex items-center justify-center mx-auto mb-6">
+            2
+          </div>
+          <h3 class="font-heading text-xl font-bold mb-3">Free Estimate</h3>
+          <p class="text-silver text-sm">
+            We assess your needs on-site and provide a detailed, transparent quote.
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-xl bg-electric text-carbon font-heading text-2xl font-bold flex items-center justify-center mx-auto mb-6">
+            3
+          </div>
+          <h3 class="font-heading text-xl font-bold mb-3">Expert Work</h3>
+          <p class="text-silver text-sm">
+            Our licensed electricians complete the job with precision and care.
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-xl bg-volt text-carbon font-heading text-2xl font-bold flex items-center justify-center mx-auto mb-6">
+            4
+          </div>
+          <h3 class="font-heading text-xl font-bold mb-3">Final Walkthrough</h3>
+          <p class="text-silver text-sm">
+            We review the completed work with you and ensure your complete satisfaction.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Services -->
+  <section class="section-padding circuit-bg">
+    <div class="max-w-7xl mx-auto">
+      <div class="rounded-2xl bg-steel border border-electric/20 p-8 md:p-12">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-electric/20 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-electric animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <span class="font-heading text-sm tracking-wider text-electric uppercase">Emergency Services</span>
+            </div>
+            
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
+              Electrical Emergency?
+            </h2>
+            
+            <p class="text-silver leading-relaxed mb-6">
+              Electrical problems don't wait for convenient times. Whether it's a power outage, 
+              sparking outlet, or any other urgent issue, we're here to help with fast, 
+              professional emergency electrical services.
+            </p>
+            
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3 text-silver">
+                <svg class="w-5 h-5 text-electric flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Fast response times
+              </li>
+              <li class="flex items-center gap-3 text-silver">
+                <svg class="w-5 h-5 text-electric flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Available for urgent situations
+              </li>
+              <li class="flex items-center gap-3 text-silver">
+                <svg class="w-5 h-5 text-electric flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Licensed and insured professionals
+              </li>
+            </ul>
+          </div>
+          
+          <div class="rounded-xl bg-carbon p-8 text-center">
+            <p class="text-silver mb-4">Call us now for emergency service:</p>
+            <a href="tel:+18606049325" class="text-4xl md:text-5xl font-heading font-bold text-electric hover:text-volt transition-colors">
+              (860) 604-9325
+            </a>
+            <p class="text-silver text-sm mt-4">
+              For non-emergencies, <a href="/contact" class="text-electric hover:text-volt underline">request a quote</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-electric relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <pattern id="services-cta-pattern" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+          <path d="M0 5 L5 0 L10 5 L5 10 Z" fill="currentColor"/>
+        </pattern>
+        <rect width="100%" height="100%" fill="url(#services-cta-pattern)"/>
+      </svg>
+    </div>
+    
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <h2 class="text-4xl md:text-5xl font-heading font-bold text-carbon mb-6">
+        Need Electrical Work Done?
+      </h2>
+      <p class="text-carbon/80 text-lg mb-10 max-w-2xl mx-auto">
+        Get a free estimate for your project. No obligation, no pressure—just honest advice 
+        and transparent pricing.
+      </p>
+      <a href="/contact" class="inline-flex items-center gap-2 rounded-lg bg-carbon text-white font-bold py-4 px-10 uppercase tracking-wider transition-all duration-300 hover:bg-steel hover:scale-105">
+        Get Your Free Estimate
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>

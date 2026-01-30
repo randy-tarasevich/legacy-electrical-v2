@@ -1,0 +1,254 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>`,
+    title: 'Residential',
+    description: 'Complete home electrical solutions from wiring upgrades to smart home installations.',
+  },
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`,
+    title: 'Commercial',
+    description: 'Professional electrical services for businesses, retail, and industrial facilities.',
+  },
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
+    title: 'Emergency Repairs',
+    description: 'Fast response times when you need electrical repairs that cannot wait.',
+  },
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>`,
+    title: 'Panel Upgrades',
+    description: 'Modernize your electrical panel for improved safety and increased capacity.',
+  },
+];
+
+const reasons = [
+  { number: '15+', label: 'Years Experience' },
+  { number: '500+', label: 'Projects Completed' },
+  { number: '100%', label: 'Licensed & Insured' },
+  { number: '24/7', label: 'Emergency Service' },
+];
+---
+
+<Layout title="Home">
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden circuit-bg">
+    <!-- Decorative Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-1/4 -right-32 w-96 h-96 bg-electric/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 -left-32 w-96 h-96 bg-volt/5 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 md:px-12 py-20 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-steel px-4 py-2 rounded-full mb-8 animate-fade-up">
+            <span class="w-2 h-2 bg-electric rounded-full animate-pulse"></span>
+            <span class="text-silver text-sm font-medium">Serving All of Connecticut</span>
+          </div>
+          
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight mb-6 animate-fade-up">
+            Powering Your
+            <span class="text-electric glow-text block">Legacy</span>
+          </h1>
+          
+          <p class="text-xl text-silver leading-relaxed mb-10 max-w-xl animate-fade-up-delay">
+            Professional electrical contracting services built on trust, quality craftsmanship, 
+            and a commitment to excellence that lasts for generations.
+          </p>
+          
+          <div class="flex flex-wrap gap-4 animate-fade-up-delay-2">
+            <a href="/contact" class="btn-primary">
+              Get Free Estimate
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a href="/services" class="btn-secondary">
+              Our Services
+            </a>
+          </div>
+        </div>
+        
+        <div class="relative hidden lg:block">
+          <div class="relative">
+            <!-- Abstract electrical graphic -->
+            <svg viewBox="0 0 400 400" class="w-full h-auto">
+              <defs>
+                <linearGradient id="bolt-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#f5dd00"/>
+                  <stop offset="100%" style="stop-color:#ffeb3b"/>
+                </linearGradient>
+              </defs>
+              <!-- Circuit lines -->
+              <g stroke="rgba(245,221,0,0.3)" stroke-width="1" fill="none">
+                <path d="M50,200 L150,200 L150,100 L250,100"/>
+                <path d="M50,250 L100,250 L100,300 L200,300"/>
+                <path d="M300,50 L300,150 L350,150"/>
+                <path d="M200,350 L300,350 L300,280"/>
+              </g>
+              <!-- Connection points -->
+              <g fill="#f5dd00">
+                <circle cx="150" cy="200" r="4"/>
+                <circle cx="150" cy="100" r="4"/>
+                <circle cx="250" cy="100" r="4"/>
+                <circle cx="100" cy="250" r="4"/>
+                <circle cx="100" cy="300" r="4"/>
+                <circle cx="200" cy="300" r="4"/>
+                <circle cx="300" cy="150" r="4"/>
+                <circle cx="300" cy="280" r="4"/>
+              </g>
+              <!-- Central bolt -->
+              <path d="M220,80 L180,200 L230,200 L180,320" stroke="url(#bolt-gradient)" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Glow effect -->
+              <path d="M220,80 L180,200 L230,200 L180,320" stroke="url(#bolt-gradient)" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3" filter="blur(10px)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+      <div class="w-6 h-10 border-2 border-silver/30 rounded-full flex justify-center pt-2">
+        <div class="w-1 h-2 bg-electric rounded-full animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="section-padding bg-steel">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">
+          What We <span class="text-electric">Do</span>
+        </h2>
+        <p class="text-silver text-lg max-w-2xl mx-auto">
+          From residential repairs to commercial installations, we deliver electrical solutions 
+          with precision and professionalism.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {services.map((service, index) => (
+          <div class="group rounded-xl bg-carbon p-8 border border-carbon hover:border-electric/30 transition-all duration-500 hover:-translate-y-2">
+            <div class="w-14 h-14 rounded-xl bg-electric/10 flex items-center justify-center mb-6 text-electric group-hover:bg-electric group-hover:text-carbon transition-all duration-300" set:html={service.icon}></div>
+            <h3 class="font-heading text-xl font-bold mb-3">{service.title}</h3>
+            <p class="text-silver text-sm leading-relaxed">{service.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="/services" class="btn-secondary">
+          View All Services
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section-padding circuit-bg relative">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+            Why Choose <span class="text-electric">Legacy?</span>
+          </h2>
+          <p class="text-silver text-lg leading-relaxed mb-8">
+            At Legacy Electrical CT, we believe that exceptional electrical work isn't just about 
+            getting the job done—it's about creating lasting relationships built on trust, 
+            transparency, and top-tier craftsmanship.
+          </p>
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-start gap-4">
+              <span class="w-6 h-6 rounded-md bg-electric flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-carbon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <span class="text-silver">Fully licensed and insured for your protection</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-6 h-6 rounded-md bg-electric flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-carbon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <span class="text-silver">Transparent pricing with no hidden fees</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-6 h-6 rounded-md bg-electric flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-carbon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <span class="text-silver">Clean, respectful service on every job site</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-6 h-6 rounded-md bg-electric flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-carbon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <span class="text-silver">Workmanship guaranteed on all projects</span>
+            </li>
+          </ul>
+          <a href="/about" class="btn-primary">
+            Learn More About Us
+          </a>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-6">
+          {reasons.map((reason) => (
+            <div class="rounded-xl bg-steel p-8 text-center border-l-4 border-electric">
+              <div class="text-4xl md:text-5xl font-heading font-bold text-electric mb-2">{reason.number}</div>
+              <div class="text-silver text-sm uppercase tracking-wider">{reason.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-electric relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <pattern id="cta-pattern" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+          <path d="M0 5 L5 0 L10 5 L5 10 Z" fill="currentColor"/>
+        </pattern>
+        <rect width="100%" height="100%" fill="url(#cta-pattern)"/>
+      </svg>
+    </div>
+    
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <h2 class="text-4xl md:text-5xl font-heading font-bold text-carbon mb-6">
+        Ready to Get Started?
+      </h2>
+      <p class="text-carbon/80 text-lg mb-10 max-w-2xl mx-auto">
+        Whether you need a simple repair or a complete electrical upgrade, 
+        we're here to help. Contact us today for a free estimate.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 rounded-lg bg-carbon text-white font-bold py-4 px-10 uppercase tracking-wider transition-all duration-300 hover:bg-steel hover:scale-105">
+          Request a Quote
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <a href="tel:+18606049325" class="inline-flex items-center gap-2 rounded-lg bg-transparent border-2 border-carbon text-carbon font-bold py-4 px-10 uppercase tracking-wider transition-all duration-300 hover:bg-carbon hover:text-white">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          (860) 604-9325
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
