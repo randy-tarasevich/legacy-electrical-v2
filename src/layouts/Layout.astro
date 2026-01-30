@@ -9,6 +9,32 @@ interface Props {
 }
 
 const { title, description = "Legacy Electrical CT - Professional electrical contracting services throughout Connecticut. Licensed, insured, and committed to quality." } = Astro.props;
+
+const fullTitle = title === 'Home' ? 'Legacy Electrical CT' : `${title} | Legacy Electrical CT`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/legacy-logo.png', Astro.site).href;
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Electrician',
+  name: 'Legacy Electrical CT',
+  description: description,
+  url: Astro.site,
+  telephone: '+18606049325',
+  email: 'tayler@legacyelectricalct.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'East Berlin',
+    addressRegion: 'CT',
+    postalCode: '06023',
+    addressCountry: 'US',
+  },
+  areaServed: {
+    '@type': 'State',
+    name: 'Connecticut',
+  },
+  priceRange: '$$',
+};
 ---
 
 <!doctype html>
@@ -17,11 +43,26 @@ const { title, description = "Legacy Electrical CT - Professional electrical con
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="geo.region" content="US-CT" />
+    <link rel="canonical" href={canonicalURL.href} />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Legacy Electrical CT" />
+    <meta property="og:locale" content="en_US" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <title>{title} | Legacy Electrical CT</title>
+    <title>{fullTitle}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
   </head>
   <body class="min-h-screen flex flex-col">
     <Navigation />
