@@ -7,7 +7,7 @@ import { brand } from '../../config/brand';
 import { client } from '../../data/client';
 ---
 
-<BaseLayout title="Contact" description={`Get in touch with ${brand.name}. Request a free quote or ask us a question.`}>
+<BaseLayout title="Contact" description={`Contact ${brand.name} to schedule electrical service, request an estimate, or ask a question about your project.`}>
   <Header slot="header" />
 
   <Banner title="Contact Us" />
@@ -17,23 +17,21 @@ import { client } from '../../data/client';
 
       <!-- Form -->
       <div class="lg:col-span-3">
-        <h2 class="font-heading text-h2 font-bold uppercase text-text">Send us a message</h2>
+        <h2 class="font-heading text-h2 font-bold uppercase text-text">Request service or an estimate</h2>
         <p class="mt-2 mb-8 text-text-muted">
-          Fill out the form below and we'll get back to you within one business day.
+          Tell us a little about the electrical issue or project, and we will follow up within one business day.
         </p>
 
         <form
-          name="contact"
           method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          action="/contact/success"
+          action="https://api.web3forms.com/submit"
           class="flex flex-col gap-5"
         >
-          <input type="hidden" name="form-name" value="contact" />
-          <p class="hidden" aria-hidden="true">
-            <label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
-          </p>
+          <input type="hidden" name="access_key" value="c89bcd28-0482-40a7-876e-193e9da3d525" />
+          <input type="hidden" name="subject" value="New Contact Form Submission - Legacy Electrical" />
+          <input type="hidden" name="from_name" value="Legacy Electrical Website" />
+          <input type="hidden" name="redirect" value={`${Astro.url.origin}/contact/success`} />
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off" />
 
           <label class="flex flex-col gap-1.5">
             <span class="text-sm font-medium text-text">Name <span class="text-accent" aria-hidden="true">*</span></span>
@@ -82,7 +80,7 @@ import { client } from '../../data/client';
             type="submit"
             class="mt-2 inline-flex min-h-[44px] cursor-pointer items-center justify-center self-start rounded-md bg-accent px-8 py-3 text-base font-bold text-accent-fg shadow-sm transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
-            Send Message
+            Submit Request
           </button>
         </form>
       </div>
@@ -111,7 +109,7 @@ import { client } from '../../data/client';
             rel="noopener noreferrer"
             class="mt-1 block text-text-muted transition-colors hover:text-text"
           >
-            {client.address.lineOne}<br />
+            {client.address.lineOne && <>{client.address.lineOne}<br /></>}
             {client.address.lineTwo && <>{client.address.lineTwo}<br /></>}
             {client.address.city}, {client.address.state} {client.address.zip}
           </a>
@@ -123,7 +121,7 @@ import { client } from '../../data/client';
             Mon – Fri: 7:00 AM – 6:00 PM<br />
             Sat: 8:00 AM – 2:00 PM<br />
             Sun: Closed<br />
-            <span class="font-medium text-accent">24/7 Emergency Service Available</span>
+            <span class="font-medium text-accent">Emergency electrical service available</span>
           </p>
         </div>
       </aside>

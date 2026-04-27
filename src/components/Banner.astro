@@ -1,9 +1,11 @@
 ---
 interface Props {
   title: string;
+  variant?: 'default' | 'light';
 }
 
-const { title } = Astro.props;
+const { title, variant = 'default' } = Astro.props;
+const isLight = variant === 'light';
 
 const segments = Astro.url.pathname
   .split('/')
@@ -15,13 +17,13 @@ const segments = Astro.url.pathname
   }));
 ---
 
-<section class="bg-primary py-14 sm:py-16 lg:py-20">
+<section class:list={['py-14 sm:py-16 lg:py-20', isLight ? 'bg-black' : 'bg-primary']}>
   <div class="mx-auto max-w-site px-4 sm:px-6">
     <!-- Breadcrumb -->
     <nav aria-label="Breadcrumb" class="mb-4">
-      <ol class="flex flex-wrap items-center gap-1.5 text-sm text-primary-fg/60">
+      <ol class:list={['flex flex-wrap items-center gap-1.5 text-sm', isLight ? 'text-white/70' : 'text-primary-fg/60']}>
         <li>
-          <a href="/" class="transition-colors hover:text-primary-fg">Home</a>
+          <a href="/" class:list={['transition-colors', isLight ? 'hover:text-white' : 'hover:text-primary-fg']}>Home</a>
         </li>
         {segments.map(({ label, href, isLast }) => (
           <li class="flex items-center gap-1.5">
@@ -29,16 +31,16 @@ const segments = Astro.url.pathname
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
             {isLast ? (
-              <span aria-current="page" class="text-primary-fg">{label}</span>
+              <span aria-current="page" class:list={isLight ? 'text-white' : 'text-primary-fg'}>{label}</span>
             ) : (
-              <a href={href} class="transition-colors hover:text-primary-fg">{label}</a>
+              <a href={href} class:list={['transition-colors', isLight ? 'hover:text-white' : 'hover:text-primary-fg']}>{label}</a>
             )}
           </li>
         ))}
       </ol>
     </nav>
 
-    <h1 class="font-heading text-h1 font-bold uppercase text-primary-fg">
+    <h1 class:list={['font-heading text-h1 font-bold uppercase', isLight ? 'text-white' : 'text-primary-fg']}>
       {title}
     </h1>
   </div>

@@ -1,8 +1,8 @@
 {
-  "name": "small-business-starter",
+  "name": "legacy-electrical-v2",
   "type": "module",
   "version": "0.1.0",
-  "description": "A minimal, fast, and fully customisable small-business website template built with Astro 6, Tailwind v4, and Playwright.",
+  "description": "Legacy Electrical v2 website built with Astro 6 and Tailwind v4.",
   "author": "",
   "license": "MIT",
   "keywords": [
@@ -14,8 +14,7 @@
     "small-business",
     "starter",
     "template",
-    "view-transitions",
-    "playwright"
+    "view-transitions"
   ],
   "engines": {
     "node": ">=22.12.0"
@@ -24,11 +23,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "test": "playwright test",
-    "test:ui": "playwright test --ui",
-    "test:perf": "playwright test tests/performance.spec.ts",
-    "test:report": "playwright show-report"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.1",
@@ -38,8 +33,9 @@
     "astro-robots-txt": "^1.0.0",
     "tailwindcss": "^4.2.1"
   },
-  "devDependencies": {
-    "@playwright/test": "^1.58.2"
+  "devDependencies": {},
+  "overrides": {
+    "vite": "^7"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

@@ -11,19 +11,19 @@
  */
 
 export const client = {
-  name: 'Small Business Starter',
-  email: 'hello@example.com',
-  phoneForTel: '555-867-5309',
-  phoneFormatted: '(555) 867-5309',
+  name: 'Legacy Electrical',
+  email: 'tayler@legacyelectricalct.com',
+  phoneForTel: '860-604-9325',
+  phoneFormatted: '860-604-9325',
   /** Business / contractor license number. Displayed in the header and footer
    *  as a trust signal. Set to an empty string to hide it. */
-  license: 'Lic# 123456',
+  license: 'License: ELC.0207936-E1 (CT)',
   address: {
-    lineOne: '123 Main Street',
-    lineTwo: 'Suite 100',
-    city: 'Denver',
-    state: 'CO',
-    zip: '80206',
+    lineOne: '',
+    lineTwo: '',
+    city: 'East Berlin',
+    state: 'CT',
+    zip: '06023',
     country: 'US',
     mapLink: 'https://maps.app.goo.gl/example',
   },
@@ -32,7 +32,7 @@ export const client = {
     instagram: 'https://www.instagram.com/',
     google: 'https://www.google.com/maps',
   },
-  domain: 'https://www.example.com',
+  domain: 'https://www.legacyelectrical.com',
 } as const;
 
 export type Client = typeof client;

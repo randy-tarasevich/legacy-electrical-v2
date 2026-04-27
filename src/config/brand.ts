@@ -14,11 +14,11 @@
 
 export const brand = {
   // ── Site Identity ──────────────────────────────────────────────────────────
-  name: 'Small Business Starter',
-  tagline: 'Professional service you can trust.',
+  name: 'Legacy Electrical v2',
+  tagline: 'Reliable electrical service for homes and businesses.',
   description:
-    'A fast, mobile-first small-business website template built with Astro 6 and Tailwind v4. Fully customisable for any trade or service business.',
-  url: 'https://example.com',
+    'Licensed electricians delivering safe, code-compliant installations, repairs, and upgrades with responsive service and clear communication.',
+  url: 'https://legacyelectrical.com',
   locale: 'en_US',
 
   // ── Fonts ──────────────────────────────────────────────────────────────────

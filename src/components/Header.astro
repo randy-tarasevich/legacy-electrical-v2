@@ -1,13 +1,13 @@
 ---
+import { Image } from 'astro:assets';
 import { brand } from '../config/brand';
 import { client } from '../data/client';
+import logo from '../assets/images/legacy-logo.png';
 
 const nav = [
   { label: 'Home',     href: '/' },
   { label: 'About',    href: '/about' },
   { label: 'Services', href: '/services' },
-  { label: 'Reviews',  href: '/reviews' },
-  { label: 'Blog',     href: '/blog' },
   { label: 'Contact',  href: '/contact' },
 ];
 
@@ -22,9 +22,18 @@ const currentPath = Astro.url.pathname;
     <!-- Logo -->
     <a
       href="/"
-      class="font-heading text-xl font-bold uppercase tracking-wide text-primary transition-opacity hover:opacity-80"
+      class="inline-flex items-center transition-opacity hover:opacity-80"
+      aria-label={`${brand.name} home`}
     >
-      {brand.name}
+      <Image
+        src={logo}
+        alt={brand.name}
+        width={220}
+        height={73}
+        loading="eager"
+        decoding="async"
+        class="h-12 w-auto sm:h-14"
+      />
     </a>
 
     <!-- Desktop nav -->
