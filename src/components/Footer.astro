@@ -4,6 +4,22 @@ import { client } from '../data/client';
 
 const year = new Date().getFullYear();
 
+const services = [
+  'Residential Electrical',
+  'Commercial Electrical',
+  'Light Commercial',
+  'New Construction',
+  'Home Remodels',
+  'Panel Upgrades',
+  'Service Upgrades',
+  'EV Charger Installation',
+  'Generator & Backup Power',
+  'Pool Wiring',
+  'Low Voltage Lighting',
+  'Troubleshooting',
+  'Safety Inspections',
+];
+
 const navCols = [
   {
     title: 'Company',
@@ -12,6 +28,10 @@ const navCols = [
       { label: 'Services', href: '/services' },
       { label: 'Contact',  href: '/contact' },
     ],
+  },
+  {
+    title: 'Services',
+    links: services.map((service) => ({ label: service, href: '/services' })),
   },
 ];
 ---

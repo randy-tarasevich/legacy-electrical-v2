@@ -10,6 +10,74 @@ import Gallery from '../components/Gallery.astro';
 import CTA from '../components/CTA.astro';
 import { brand } from '../config/brand';
 import { client } from '../data/client';
+
+const services = [
+  {
+    title: 'Residential Electrical',
+    description: 'Full-service residential wiring, repairs, and upgrades for homes of all ages across Connecticut.',
+    href: '/services',
+  },
+  {
+    title: 'Commercial Electrical',
+    description: 'Reliable electrical work for offices, retail spaces, and commercial properties, scheduled to minimize downtime.',
+    href: '/services',
+  },
+  {
+    title: 'Light Commercial',
+    description: 'Electrical services tailored to small commercial buildouts, tenant improvements, and light industrial spaces.',
+    href: '/services',
+  },
+  {
+    title: 'New Construction',
+    description: 'Full electrical rough-in and finish work for new residential and commercial construction projects.',
+    href: '/services',
+  },
+  {
+    title: 'Home Remodels',
+    description: 'Panel upgrades, rewiring, and new circuits for kitchen, bathroom, and whole-home renovation projects.',
+    href: '/services',
+  },
+  {
+    title: 'Panel Upgrades',
+    description: 'Upgrade outdated electrical panels to support modern loads, improve reliability, and reduce fire risk.',
+    href: '/services',
+  },
+  {
+    title: 'Service Upgrades',
+    description: 'Increase your home or business electrical service capacity to meet the demands of modern appliances and systems.',
+    href: '/services',
+  },
+  {
+    title: 'EV Charger Installation',
+    description: 'Code-compliant Level 2 charger installation with proper circuit sizing, permitting guidance, and clean workmanship.',
+    href: '/services',
+  },
+  {
+    title: 'Generator & Backup Power',
+    description: 'Transfer switch wiring, generator connections, and backup power planning for homes and businesses.',
+    href: '/services',
+  },
+  {
+    title: 'Pool Wiring',
+    description: 'Safe, code-compliant electrical installations for pools, hot tubs, and outdoor water features.',
+    href: '/services',
+  },
+  {
+    title: 'Low Voltage Lighting',
+    description: 'Landscape, pathway, and architectural low voltage lighting design and installation.',
+    href: '/services',
+  },
+  {
+    title: 'Troubleshooting',
+    description: 'Fast diagnosis of tripping breakers, dead outlets, flickering lights, and other electrical issues.',
+    href: '/services',
+  },
+  {
+    title: 'Safety Inspections',
+    description: 'Detailed inspections for homes, offices, and real estate transactions to identify hazards and code issues.',
+    href: '/services',
+  },
+];
 ---
 
 <BaseLayout
@@ -36,7 +104,7 @@ import { client } from '../data/client';
 
   <Hero />
   <TrustBar />
-  <Services />
+  <Services services={services} />
   <About />
   <Gallery />
   <CTA />
