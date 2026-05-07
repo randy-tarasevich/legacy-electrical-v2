@@ -85,19 +85,50 @@ const services = [
   description={brand.description}
   schema={{
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': 'Electrician',
     name: client.name,
+    url: client.domain,
     telephone: client.phoneForTel,
     email: client.email,
+    image: `${client.domain}/og-image.png`,
+    description: brand.description,
+    priceRange: '$$',
+    currenciesAccepted: 'USD',
+    paymentAccepted: 'Cash, Check, Apple Pay',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: client.address.lineOne,
       addressLocality: client.address.city,
       addressRegion: client.address.state,
       postalCode: client.address.zip,
       addressCountry: client.address.country,
     },
-    url: client.domain,
+    areaServed: {
+      '@type': 'State',
+      name: 'Connecticut',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Electrical Services',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Residential Electrical' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial Electrical' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Panel Upgrades' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'EV Charger Installation' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'New Construction' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Home Remodels' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pool Wiring' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Generator & Backup Power' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Low Voltage Lighting' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Safety Inspections' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Troubleshooting' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Service Upgrades' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Light Commercial' } },
+      ],
+    },
+    sameAs: [
+      client.socials.facebook,
+      client.socials.google,
+    ],
   }}
 >
   <Header slot="header" />

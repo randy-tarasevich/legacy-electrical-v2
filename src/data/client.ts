@@ -21,7 +21,7 @@ export const client = {
   address: {
     lineOne: '',
     lineTwo: '',
-    city: 'East Berlin',
+    city: 'Berlin',
     state: 'CT',
     zip: '06023',
     country: 'US',
@@ -32,7 +32,7 @@ export const client = {
     instagram: 'https://www.instagram.com/',
     google: 'https://www.google.com/maps',
   },
-  domain: 'https://www.legacyelectrical.com',
+  domain: 'https://www.legacyelectricalct.com',
 } as const;
 
 export type Client = typeof client;
