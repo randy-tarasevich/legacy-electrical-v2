@@ -6,10 +6,8 @@ import Banner from '../components/Banner.astro';
 import CTA from '../components/CTA.astro';
 import { Image } from 'astro:assets';
 import { brand } from '../config/brand';
-
-const team = [
-  { name: 'Tayler', role: 'Owner & Licensed Electrician', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80' },
-];
+import { aboutImage } from '../config/images';
+import aboutPlaceholder from '../assets/images/about/img_2173.webp';
 ---
 
 <BaseLayout title="About Us" description={`Learn about ${brand.name} and Tayler, committed to safe electrical work, honest communication, and dependable service.`}>
@@ -22,8 +20,8 @@ const team = [
     <div class="mx-auto grid max-w-site grid-cols-1 items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14">
       <div class="overflow-hidden rounded-lg shadow-lg">
         <Image
-          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80"
-          alt="Our team planning a project together"
+          src={aboutImage ?? aboutPlaceholder}
+          alt="Legacy Electrical job site"
           width={800}
           height={600}
           loading="lazy"
@@ -34,40 +32,11 @@ const team = [
         <span class="text-topper font-bold uppercase tracking-widest text-accent">Our Story</span>
         <h2 class="font-heading text-h2 font-bold uppercase text-text">Built on safety, powered by trust</h2>
         <p class="text-text-muted leading-relaxed">
-          Legacy Electrical started as a one-person operation and has grown into a trusted local team serving homeowners and small businesses across East Berlin, CT. For more than 15 years, we have focused on doing the job right and treating people fairly.
+          Legacy Electrical started as a one-person operation and has grown into a trusted local team serving homeowners and small businesses across Berlin, CT. For more than 15 years, we have focused on doing the job right and treating people fairly.
         </p>
         <p class="text-text-muted leading-relaxed">
           Every technician is licensed and insured, and every project is completed with safety-first standards. We arrive prepared, explain options clearly, and leave your space clean when the work is done.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team -->
-  <section class="bg-surface py-section">
-    <div class="mx-auto max-w-site px-4 sm:px-6">
-      <div class="mx-auto mb-10 max-w-2xl text-center">
-        <span class="text-topper font-bold uppercase tracking-widest text-accent">Our Team</span>
-        <h2 class="mt-2 font-heading text-h2 font-bold uppercase text-text">Meet Tayler</h2>
-      </div>
-
-      <div class="mx-auto grid max-w-md grid-cols-1 gap-8">
-        {team.map(({ name, role, image }) => (
-          <div class="overflow-hidden rounded-lg bg-background shadow-sm">
-            <Image
-              src={image}
-              alt={name}
-              width={400}
-              height={400}
-              loading="lazy"
-              class="aspect-square w-full object-cover"
-            />
-            <div class="p-5">
-              <h3 class="font-heading text-lg font-semibold text-text">{name}</h3>
-              <p class="text-sm text-text-muted">{role}</p>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   </section>
