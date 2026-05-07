@@ -80,7 +80,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? brand.url);
     <slot name="head" />
     <ClientRouter />
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPYDKDYSS8" is:inline></script>
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-LPYDKDYSS8"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
