@@ -170,8 +170,8 @@ const currentPath = Astro.url.pathname;
     header.dataset.menuInit = 'true';
 
     const activeClasses = ['bg-primary/10', 'text-primary'];
-    const inactiveDesktop = ['text-text-muted', 'hover:bg-surface', 'hover:text-gray-900'];
-    const inactiveMobile = ['text-text-muted', 'hover:text-text', 'hover:bg-surface'];
+    const inactiveDesktop = ['text-text-muted'];
+    const inactiveMobile = ['text-text-muted', 'hover:bg-surface'];
 
     const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
 
