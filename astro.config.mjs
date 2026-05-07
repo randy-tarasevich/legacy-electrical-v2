@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
 
 export default defineConfig({
-  site: 'https://www.legacyelectrical.com',
+  site: 'https://legacyelectricalct.com',
   output: 'static',
 
   integrations: [sitemap(), robotsTxt()],
@@ -13,14 +13,14 @@ export default defineConfig({
   fonts: [
     {
       provider: fontProviders.google(),
-      name: 'Oswald',
+      name: 'Plus Jakarta Sans',
       cssVariable: '--font-display',
       weights: ['400', '600', '700'],
       styles: ['normal'],
     },
     {
       provider: fontProviders.google(),
-      name: 'Inter',
+      name: 'Plus Jakarta Sans',
       cssVariable: '--font-body',
       weights: ['400', '500', '700'],
       styles: ['normal'],
