@@ -48,7 +48,7 @@ const currentPath = Astro.url.pathname;
               'rounded-md px-3 py-2 text-sm font-medium transition-colors',
               isActive
                 ? 'bg-primary/10 text-primary'
-                : 'text-text-muted hover:text-text',
+                : 'text-text-muted hover:bg-surface hover:text-gray-900',
             ]}
           >
             {label}
@@ -162,7 +162,7 @@ const currentPath = Astro.url.pathname;
     header.dataset.menuInit = 'true';
 
     const activeClasses = ['bg-primary/10', 'text-primary'];
-    const inactiveDesktop = ['text-text-muted', 'hover:text-text'];
+    const inactiveDesktop = ['text-text-muted', 'hover:bg-surface', 'hover:text-gray-900'];
     const inactiveMobile = ['text-text-muted', 'hover:text-text', 'hover:bg-surface'];
 
     const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
