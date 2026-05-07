@@ -161,10 +161,6 @@ const currentPath = Astro.url.pathname;
     if (header.dataset.menuInit === 'true') return;
     header.dataset.menuInit = 'true';
 
-    const activeClasses = ['bg-primary/10', 'text-primary'];
-    const inactiveDesktop = ['text-text-muted'];
-    const inactiveMobile = ['text-text-muted', 'hover:bg-surface'];
-
     const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
 
     const setMenuOpen = (nextOpen: boolean) => {
@@ -175,35 +171,6 @@ const currentPath = Astro.url.pathname;
       iconOpen.classList.toggle('hidden', nextOpen);
       iconClose.classList.toggle('hidden', !nextOpen);
     };
-
-    function syncActiveLinks() {
-      const path = window.location.pathname;
-      const desktopLinks = header.querySelectorAll('nav[aria-label="Primary navigation"] a');
-      const mobileLinks = header.querySelectorAll('#mobile-menu nav a');
-
-      desktopLinks.forEach((link) => {
-        const href = link.getAttribute('href') || '';
-        const isActive = href === path || (href !== '/' && path.startsWith(href));
-        link.classList.toggle(activeClasses[0], isActive);
-        link.classList.toggle(activeClasses[1], isActive);
-        link.classList.toggle(inactiveDesktop[0], !isActive);
-        link.classList.toggle(inactiveDesktop[1], !isActive);
-        if (isActive) link.setAttribute('aria-current', 'page');
-        else link.removeAttribute('aria-current');
-      });
-
-      mobileLinks.forEach((link) => {
-        const href = link.getAttribute('href') || '';
-        const isActive = href === path || (href !== '/' && path.startsWith(href));
-        link.classList.toggle(activeClasses[0], isActive);
-        link.classList.toggle(activeClasses[1], isActive);
-        link.classList.toggle(inactiveMobile[0], !isActive);
-        link.classList.toggle(inactiveMobile[1], !isActive);
-        link.classList.toggle(inactiveMobile[2], !isActive);
-        if (isActive) link.setAttribute('aria-current', 'page');
-        else link.removeAttribute('aria-current');
-      });
-    }
 
     btn.addEventListener('click', () => {
       if (isDesktop()) return;
@@ -219,8 +186,6 @@ const currentPath = Astro.url.pathname;
 
     const handleRouteChange = () => {
       setMenuOpen(false);
-      // Wait one frame so window.location reflects the completed navigation.
-      requestAnimationFrame(syncActiveLinks);
     };
 
     document.addEventListener('astro:before-preparation', () => setMenuOpen(false));
@@ -232,6 +197,5 @@ const currentPath = Astro.url.pathname;
     window.addEventListener('resize', () => setMenuOpen(false));
 
     setMenuOpen(false);
-    syncActiveLinks();
   })();
 </script>
