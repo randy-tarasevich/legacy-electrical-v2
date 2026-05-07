@@ -217,11 +217,16 @@ const currentPath = Astro.url.pathname;
       if (target.closest('a[href]')) setMenuOpen(false);
     });
 
-    document.addEventListener('astro:before-preparation', () => setMenuOpen(false));
-    document.addEventListener('astro:after-swap', () => {
+    const handleRouteChange = () => {
       setMenuOpen(false);
-      syncActiveLinks();
-    });
+      // Wait one frame so window.location reflects the completed navigation.
+      requestAnimationFrame(syncActiveLinks);
+    };
+
+    document.addEventListener('astro:before-preparation', () => setMenuOpen(false));
+    document.addEventListener('astro:after-swap', handleRouteChange);
+    document.addEventListener('astro:page-load', handleRouteChange);
+    window.addEventListener('popstate', handleRouteChange);
 
     // Ensure mobile drawer can't stay open if viewport changes to desktop.
     window.addEventListener('resize', () => setMenuOpen(false));

@@ -15,9 +15,9 @@
 export const brand = {
   // ── Site Identity ──────────────────────────────────────────────────────────
   name: 'Legacy Electrical v2',
-  tagline: 'Reliable electrical service for homes and businesses.',
+  tagline: 'Licensed electrician. Active firefighter.',
   description:
-    'Licensed electricians delivering safe, code-compliant installations, repairs, and upgrades with responsive service and clear communication.',
+    "Legacy Electrical brings a first responder's commitment to safety to every residential and commercial job across Connecticut.",
   url: 'https://legacyelectrical.com',
   locale: 'en_US',
 
@@ -33,31 +33,31 @@ export const brand = {
   // These values are written to CSS custom properties in theme.css.
   // Tailwind v4 @theme picks them up automatically.
   colors: {
-    primary:      '#1B3A6B',
+    primary: '#1B3A6B',
     primaryLight: '#2563EB',
-    primaryFg:    '#ffffff',
+    primaryFg: '#ffffff',
 
-    accent:       '#F97316',
-    accentFg:     '#ffffff',
+    accent: '#F97316',
+    accentFg: '#ffffff',
 
-    background:   '#ffffff',
-    surface:      '#F8FAFC',
-    border:       '#E2E8F0',
+    background: '#ffffff',
+    surface: '#F8FAFC',
+    border: '#E2E8F0',
 
-    text:         '#0F172A',
-    textMuted:    '#475569',
+    text: '#0F172A',
+    textMuted: '#475569',
 
-    dark:         '#0F172A',
-    darkSurface:  '#1E293B',
+    dark: '#0F172A',
+    darkSurface: '#1E293B',
   },
 
   // ── Border radius ──────────────────────────────────────────────────────────
   radius: {
-    sm:   '0.375rem',
-    md:   '0.625rem',
-    lg:   '1rem',
+    sm: '0.375rem',
+    md: '0.625rem',
+    lg: '1rem',
     full: '9999px',
   },
-} as const;
+} as const
 
-export type Brand = typeof brand;
+export type Brand = typeof brand
