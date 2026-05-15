@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config';
+import partytown from '@astrojs/partytown';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
@@ -8,7 +9,15 @@ export default defineConfig({
   site: 'https://legacyelectricalct.com',
   output: 'static',
 
-  integrations: [sitemap(), robotsTxt()],
+  integrations: [
+    sitemap(),
+    robotsTxt(),
+    partytown({
+      config: {
+        forward: ['dataLayer.push', 'gtag'],
+      },
+    }),
+  ],
 
   fonts: [
     {
