@@ -14,7 +14,7 @@
 
 export const brand = {
   // ── Site Identity ──────────────────────────────────────────────────────────
-  name: 'Legacy Electrical v2',
+  name: 'Legacy Electrical',
   tagline: 'Licensed electrician. Active firefighter.',
   description:
     "Legacy Electrical brings a first responder's commitment to safety to every residential and commercial job across Connecticut.",
